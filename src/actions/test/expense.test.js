@@ -1,5 +1,4 @@
 import { addExpense, editExpense, removeExpense } from '../expenses';
-import { string } from 'postcss-selector-parser';
 
 test('should setup remove expense action object', () => {
   const action = removeExpense({ id: '123abc' });
