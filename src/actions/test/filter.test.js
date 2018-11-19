@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 import { setStartDate,
     setEndDate,
     setTextFilter,
@@ -11,4 +13,12 @@ import { setStartDate,
             type:'SET_TEXT_FILTER',
             text:'sometext'
         })
+    })
+
+    test('should genarte set start date action object', () => {
+         const action = setStartDate(moment(0)) 
+         expect(action).toEqual({
+             type:'SET_START_DATE',
+             startDate: moment(0)
+         })
     })
