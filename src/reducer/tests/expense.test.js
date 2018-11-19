@@ -57,3 +57,13 @@ test('should not edit an expense if id not found', () => {
     expect(state).toEqual(expenses);
   });
 
+
+  
+test('should not remove expenses if id not found', () => {
+    const action = {
+      type: 'REMOVE_EXPENSE',
+      id: '-1'
+    };
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual(expenses);
+  });
