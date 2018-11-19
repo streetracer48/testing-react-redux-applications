@@ -22,3 +22,23 @@ test('should set default state', () => {
     const state = expensesReducer(expenses, action);
     expect(state).toEqual([...expenses, expense]);
   })
+
+
+  test('should be edit', () => {
+
+    const amount = 4545
+
+    const action = {
+        type:'EDIT_EXPENSE',
+        id:expenses[1].id,
+        updates: {
+            amount
+        }
+    }
+
+    const state = expensesReducer(expenses, action);
+
+    expect(state[1].amount).toBe(amount)
+
+  } 
+  )
