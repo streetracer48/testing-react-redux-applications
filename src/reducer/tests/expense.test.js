@@ -67,3 +67,15 @@ test('should not remove expenses if id not found', () => {
     const state = expensesReducer(expenses, action);
     expect(state).toEqual(expenses);
   });
+
+
+  test('should be remove expense', () => {
+       const action = {
+            type:'REMOVE_EXPENSE',
+            id:expenses[1].id
+       }
+
+       const state = expensesReducer(expenses, action);
+       expect(state).toEqual([expenses[0], expenses[2]])
+  })
+
